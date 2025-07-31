@@ -45,9 +45,12 @@ def test_loginfailed(q,w,driver):
 
     driver.find_element(By.CLASS_NAME, 'close').click()
     time.sleep(1)
+    
     # Click Login Without Fill User and Password
 def test_loginovalue(driver):
     driver.find_element(By.XPATH, '//*[@id="login"]/button/i').click()
+    error_text = driver.find_element(By.ID, 'flash').text.split('\n')[0].strip()
+    assert error_text == 'Your username is invalid!'
     driver.get_screenshot_as_file('FailedLogin3.png')
     time.sleep(1)
     print('Gagal Login')
@@ -73,6 +76,7 @@ def test_loginsuccess(driver):
     driver.get_screenshot_as_file("NewTab.png")
     driver.close()
     driver.switch_to.window(driver.window_handles[0])
+    
     # Logout
 def test_logout(driver):
     driver.find_element(By.ID, 'username').send_keys('tomsmith')
