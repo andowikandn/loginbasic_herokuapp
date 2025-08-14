@@ -14,7 +14,7 @@ def driver():
     driver.quit()
 
 CredentialsX = [
-    ('tomsmith','SUpermanWkwkw'),           # user ❌ pwd ✅
+    ('tomsmith','SUpermanWkwkw'),           # user ✅ pwd ❌
     ('tomnihahah','SuperSecretPassword!'),  # user ❌ pwd ✅
     ('tompleewkwkw','SUpermanWkwkw')        # user ❌ pwd ❌
     ]
